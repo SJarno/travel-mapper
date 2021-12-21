@@ -1,19 +1,4 @@
 
-
-async function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        console.log("Geolocation is not supported");
-    }
-}
-
-async function showPosition(position) {
-    console.log("Latitude: " + position.coords.latitude);
-    console.log("Longitude: " + position.coords.longitude);
-
-}
-
 const loadMap = async () => {
     navigator.geolocation.getCurrentPosition(function (location) {
         var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
@@ -25,5 +10,23 @@ const loadMap = async () => {
         }).addTo(mymap);
 
         var marker = L.marker(latlng).addTo(mymap);
+        marker.bindPopup("Nykyinen sijainti");
+
+        var popup = L.popup();
+            
+
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                //display lat and long:
+                .setContent('Latitude: ' + e.latlng.lat.toString()+'\nLongitude: '+e.latlng.lng.toString())
+                .openOn(mymap);
+        }
+
+        mymap.on('click', onMapClick);
+
     });
+
 };
+
+

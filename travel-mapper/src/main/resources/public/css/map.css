@@ -3,11 +3,16 @@
     justify-content: center;
 }
 
-.map-content {
-    
+.map-container {
+    border-radius: 0.5rem;
+    border: 0.25rem solid black;
 }
 
 
 #map { 
-    width: 60rem;
-    height: 50rem; }
+    width: 100%;
+    height: auto;
+    min-width: 40rem;
+    min-height: 30rem; 
+}
+    

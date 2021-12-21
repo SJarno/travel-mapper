@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+
 :root {
     --main-font-color: #fcfdf6;
     --nav-and-footer-color: rgb(53 47 47);
@@ -9,6 +11,7 @@ html {
 }
 
 body {
+    font-family: 'Imperial Script', cursive, Arial, Helvetica, sans-serif;
     color: var(--main-font-color);
     background-color: var(--body-bg-color);
     
@@ -29,6 +32,18 @@ nav ul {
 
 h1 {
     font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.5rem;
 }
 
 a, p, li, input {
