@@ -1,0 +1,64 @@
+:root {
+    --main-font-color: #fcfdf6;
+    --nav-and-footer-color: rgb(53 47 47);
+    --body-bg-color: #4b4242;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: var(--main-font-color);
+    background-color: var(--body-bg-color);
+    
+}
+
+
+nav {
+    background-color: var(--nav-and-footer-color);
+    padding: 1rem;
+    
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+a, p, li, input {
+    font-size: 1.8rem;
+}
+
+main {
+    text-align: center;
+    background-image: url("../images/compass-g0559b3d95_1920.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 2rem;
+    padding: 2rem;
+    min-height: 50rem;
+    
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--nav-and-footer-color);
+}
+
+.nav-button {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--nav-and-footer-color);
+}
+
+.nav-button:hover {
+    cursor: pointer;
+    background-color: rgb(22, 18, 18);
+}

@@ -1,0 +1,13 @@
+#main-content-fragment {
+    display: flex;
+    justify-content: center;
+}
+
+.map-content {
+    
+}
+
+
+#map { 
+    width: 60rem;
+    height: 50rem; }
