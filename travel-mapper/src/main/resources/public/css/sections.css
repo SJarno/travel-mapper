@@ -1,0 +1,25 @@
+article {
+    margin: 2rem;
+    
+}
+
+.front-page-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.front-page-content > * {
+    /* flex-basis: 100%; */
+}
+
+.register-form-container {
+    background: darkkhaki;
+    padding: 1rem;
+    line-height: 3rem;
+    border-radius: 0.25rem;
+    border: 0.1rem solid black;
+    
+}
+

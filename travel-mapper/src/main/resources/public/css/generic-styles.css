@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Waterfall&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Moon+Dance&family=Waterfall&display=swap');
 
 :root {
     --main-font-color: #fcfdf6;
@@ -46,12 +49,20 @@ h4 {
     font-size: 2.5rem;
 }
 
-a, p, li, input {
+a, p, li, label {
+    /* font-family: 'Dancing Script', cursive; */
     font-size: 1.8rem;
 }
 
+p {
+    font-size: 2.5rem;
+    font-family: 'Moon Dance', cursive;
+    
+    /* font-family: 'Waterfall', cursive; */
+    /* font-family: 'Dancing Script', cursive; */
+}
+
 main {
-    text-align: center;
     background-image: url("../images/compass-g0559b3d95_1920.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,4 +87,17 @@ footer {
 .nav-button:hover {
     cursor: pointer;
     background-color: rgb(22, 18, 18);
+}
+
+article h1 {
+    text-align: center;
+}
+
+article p {
+    text-align: center;
+}
+
+#main-content-fragment {
+    justify-content: center;
+    margin: 0 5rem 0 5rem;
 }

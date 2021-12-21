@@ -1,18 +1,15 @@
-#main-content-fragment {
-    display: flex;
-    justify-content: center;
-}
+
 
 .map-container {
     border-radius: 0.5rem;
-    border: 0.25rem solid black;
+    border: 0.1rem solid black;
 }
 
 
 #map { 
     width: 100%;
     height: auto;
-    min-width: 40rem;
+    min-width: 20rem;
     min-height: 30rem; 
 }
     

@@ -1,0 +1,33 @@
+<!-- Register form -->
+<form th:action="@{/testi}" method="post" th:fragment="register-form">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="2">
+                    <h1>Rekisteröidy</h1>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <label for="username">Käyttäjätunnus</label>   
+                </td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Salasana</label>
+                </td>
+                <td><input type="password" name="password"></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" value="Rekisteröidy">
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</form>

@@ -1,4 +1,4 @@
-
+/* Loads map when content is loaded */
 const loadMap = async () => {
     navigator.geolocation.getCurrentPosition(function (location) {
         var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
