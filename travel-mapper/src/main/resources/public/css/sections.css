@@ -14,5 +14,7 @@ article {
     /* flex-basis: 100%; */
 }
 
-
+.add-map-and-form-container {
+    box-shadow: 3px 12px 12px 4px #2f2e2e;
+}
 

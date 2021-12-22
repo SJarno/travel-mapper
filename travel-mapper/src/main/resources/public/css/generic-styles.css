@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Waterfall&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Waterfall&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Imperial+Script&family=Moon+Dance&family=Waterfall&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap');
 
 :root {
     --main-font-color: #fcfdf6;
     --nav-and-footer-color: rgb(53 47 47);
     --body-bg-color: #4b4242;
+
 }
 
 html {
@@ -17,14 +19,15 @@ body {
     font-family: 'Imperial Script', cursive, Arial, Helvetica, sans-serif;
     color: var(--main-font-color);
     background-color: var(--body-bg-color);
-    
+
 }
 
 
 nav {
-    background-color: var(--nav-and-footer-color);
+    /* background-color: var(--nav-and-footer-color); */
+    background: linear-gradient(180deg, var(--nav-and-footer-color), rgb(98 98 88));
     padding: 1rem;
-    
+
 }
 
 nav ul {
@@ -53,6 +56,7 @@ a, p, li {
     /* font-family: 'Dancing Script', cursive; */
     font-size: 1.8rem;
 }
+
 label {
     font-size: 2.5rem;
 }
@@ -69,39 +73,38 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 2rem;
-    padding: 2rem;
     min-height: 53rem;
-    
+
 }
 
 footer {
     text-align: center;
     padding: 1rem;
-    background-color: var(--nav-and-footer-color);
+    /* background-color: var(--nav-and-footer-color); */
+    background: linear-gradient(1deg, var(--nav-and-footer-color), rgb(93 93 87));
 }
 
 .nav-button {
     padding: 1rem;
     border-radius: 0.25rem;
-    background-color: var(--nav-and-footer-color);
+    text-shadow: 4px 8px 9px black, 15px 9px 25px #0d0d51, -1px 2px 5px darkblue;
+    /* background-color: var(--nav-and-footer-color); */
 }
 
 .nav-button:hover {
     cursor: pointer;
-    background-color: rgb(22, 18, 18);
+    background-color: rgb(64 59 59);
 }
 
-article h1 {
-    text-align: center;
-}
 
-article p {
+article h1, article p {
     text-align: center;
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
 }
 
 #main-content-fragment {
     justify-content: center;
-    
+
 }
 
 /* Tablet and above */
@@ -109,13 +112,17 @@ article p {
     #main-content-fragment {
         margin: 0 5rem 0 5rem;
     }
+
     main {
+        padding: 2rem;
         min-height: 83rem;
     }
+
     nav ul {
-        flex-direction: row; 
+        flex-direction: row;
     }
 }
+
 /* iPad pro and bigger */
 @media only screen and (min-width: 1024px) {
     main {

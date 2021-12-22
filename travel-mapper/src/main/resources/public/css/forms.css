@@ -1,9 +1,15 @@
+:root {
+    --main-form-bg-color: darkkhaki;
+}
+
 .register-form-container {
-    background: darkkhaki;
+    /* background: var(--main-form-bg-color); */
+    background: linear-gradient(174deg, var(--main-form-bg-color), rgb(146 103 39));
     padding: 1rem;
     line-height: 3rem;
     border-radius: 0.25rem;
     border: 0.1rem solid black;
+    box-shadow: 3px 12px 12px 4px #2f2e2e;
 
 }
 
@@ -23,12 +29,16 @@
     flex-basis: 100%;
 } */
 
+
 .add-location-form {
-    background: darkkhaki;
+    /* background: darkkhaki; */
+    background: linear-gradient(180deg, var(--main-form-bg-color), rgb(146 103 39));
     padding: 1rem;
     line-height: 3rem;
-    border-radius: 0.25rem;
+    border-radius: 0.25rem 0.25rem 0 0;
     border: 0.1rem solid black;
+    border-bottom: 0;
+    
 
 }
 
