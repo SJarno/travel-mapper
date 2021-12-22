@@ -100,6 +100,7 @@ footer {
 article h1, article p {
     text-align: center;
     /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    /* text-shadow: -1px 0 #5e5d5d, 0 1px white, 1px 0 #9f8e8e, 0px 0px #2178a7; */
 }
 
 #main-content-fragment {
