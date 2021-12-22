@@ -29,7 +29,7 @@ nav {
 
 nav ul {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 
@@ -70,7 +70,7 @@ main {
     background-size: cover;
     margin: 2rem;
     padding: 2rem;
-    min-height: 50rem;
+    min-height: 53rem;
     
 }
 
@@ -101,5 +101,30 @@ article p {
 
 #main-content-fragment {
     justify-content: center;
-    margin: 0 5rem 0 5rem;
+    
+}
+
+/* Tablet and above */
+@media only screen and (min-width: 768px) {
+    #main-content-fragment {
+        margin: 0 5rem 0 5rem;
+    }
+    main {
+        min-height: 83rem;
+    }
+    nav ul {
+        flex-direction: row; 
+    }
+}
+/* iPad pro and bigger */
+@media only screen and (min-width: 1024px) {
+    main {
+        min-height: 117rem;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    main {
+        min-height: 121rem;
+    }
 }

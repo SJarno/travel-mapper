@@ -4,8 +4,24 @@
     line-height: 3rem;
     border-radius: 0.25rem;
     border: 0.1rem solid black;
-    
+
 }
+
+/* .register-form-container tr h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+} */
+
+.register-form-container td {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+/* .register-form-container form tr > * {
+    flex-basis: 100%;
+} */
 
 .add-location-form {
     background: darkkhaki;
@@ -17,8 +33,40 @@
 }
 
 .add-location-form ul {
+    text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.add-location-form ul>* {
+    /* flex-basis: 50%; */
+}
+
+/* iPad and bigger */
+@media only screen and (min-width: 768px) {
+    .add-location-form ul {
+        flex-direction: row;
+        /* flex-wrap: nowrap; */
+    }
+
+    .add-location-form ul>* {
+        flex-basis: 50%;
+    }
+
+    .register-form-container td {
+        /* flex-direction: row;
+        justify-content: space-between; */
+        text-align: unset;
+        display: table-cell;
+
+    }
+}
+
+/* iPad pro and bigger */
+@media only screen and (min-width: 1024px) {
+    .add-location-form ul>* {
+        flex-basis: 5%;
+    }
 }
