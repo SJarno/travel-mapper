@@ -14,12 +14,5 @@ article {
     /* flex-basis: 100%; */
 }
 
-.register-form-container {
-    background: darkkhaki;
-    padding: 1rem;
-    line-height: 3rem;
-    border-radius: 0.25rem;
-    border: 0.1rem solid black;
-    
-}
+
 

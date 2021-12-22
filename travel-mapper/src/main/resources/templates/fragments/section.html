@@ -1,9 +1,9 @@
 <section th:fragment="front-page" class="front-page-content">
     <article>
-        <h1>Etusivu</h1>
+        <h1>Tervetuloa!</h1>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio quis aut fugiat reiciendis velit, atque eos eligendi reprehenderit! Aperiam eligendi numquam adipisci aut voluptas labore ut saepe tempore quaerat nobis.</p>
     </article>
-    <article class="register-form-container">
+    <article >
         <form th:replace="fragments/forms :: register-form"></form>
     </article>
 </section>
@@ -14,6 +14,10 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nihil porro exercitationem sint quidem fugit architecto autem, voluptate eum facere nisi repellat sunt debitis provident inventore ex rem placeat iusto.</p>
     </article>
     <article>
+        <aside>
+            <form th:replace="fragments/forms :: add-location-form">
+            </form>
+        </aside>
         <figure class="map-container">
             <div id="map"></div>
         </figure>

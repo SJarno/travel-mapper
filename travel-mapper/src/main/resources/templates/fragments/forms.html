@@ -1,5 +1,5 @@
 <!-- Register form -->
-<form th:action="@{/testi}" method="post" th:fragment="register-form">
+<form th:action="@{/testi}" method="post" th:fragment="register-form" class="register-form-container">
     <table>
         <thead>
             <tr>
@@ -11,13 +11,13 @@
         <tbody>
             <tr>
                 <td>
-                    <label for="username">Käyttäjätunnus</label>   
+                    <label for="username">Käyttäjätunnus: </label>   
                 </td>
                 <td><input type="text" name="username"></td>
             </tr>
             <tr>
                 <td>
-                    <label for="password">Salasana</label>
+                    <label for="password">Salasana: </label>
                 </td>
                 <td><input type="password" name="password"></td>
             </tr>
@@ -30,4 +30,17 @@
             </tr>
         </tfoot>
     </table>
+</form>
+
+<!-- Add new location form -->
+<form action="@{/}" method="post" th:fragment="add-location-form" class="add-location-form">
+    <ul>
+        <li><label for="locationName">Nimi: </label></li>
+        <li><input type="text" name="locationName" id="locationName"></li>
+        <li><label for="latitude">Latitude: </label></li>
+        <li><input type="number" name="latitude" id="locationLatitude" value="0"></li>
+        <li><label for="longitude">Longitude: </label></li>
+        <li><input type="number" name="longitude" id="locationLongitude" value="0"></li>
+        <li><input type="submit" value="Tallenna"></li>
+    </ul>
 </form>

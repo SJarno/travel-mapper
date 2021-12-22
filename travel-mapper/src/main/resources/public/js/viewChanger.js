@@ -1,5 +1,6 @@
 const url = contextRoot;
 
+/* Load fragments  */
 async function loadFragment(path) {
     let response = await fetch(url+path, {
         headers: {
