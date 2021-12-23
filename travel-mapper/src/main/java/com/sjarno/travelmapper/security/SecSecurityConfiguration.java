@@ -44,8 +44,6 @@ public class SecSecurityConfiguration extends WebSecurityConfigurerAdapter {
             
 
         http.logout()
-            /* .logoutSuccessUrl("/index")
-            .deleteCookies("cookieNamesToClear") */
             .clearAuthentication(true)
             .permitAll()
             .and()
