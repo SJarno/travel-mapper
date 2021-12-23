@@ -20,3 +20,7 @@
     width: fit-content;
     background-color: rgb(156 163 41 / 80%);
 }
+
+.alert-login {
+    margin-top: 2rem;
+}

@@ -2,11 +2,18 @@
     --main-form-bg-color: darkkhaki;
 }
 
-.loginform  {
-    font-size: 4rem;
-    /* display: flex;
-    flex-direction: column; */
+.loginform {
+    /* font-size: 4rem; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* width: fit-content; */
+    text-align: center;
 }
+
+/* .loginform>* {
+    flex-basis: 100%;
+} */
 
 .register-form-container {
     /* background: var(--main-form-bg-color); */
@@ -44,7 +51,7 @@
     border-radius: 0.25rem 0.25rem 0 0;
     border: 0.1rem solid black;
     border-bottom: 0;
-    
+
 
 }
 
@@ -78,8 +85,15 @@
         display: table-cell;
 
     }
-    .loginform  {
-        flex-direction: row;
+
+    .loginform {
+        flex-direction: column;
+        
+
+    }
+
+    .loginform>* {
+        margin-left: 1rem;
     }
 }
 
@@ -88,4 +102,12 @@
     .add-location-form ul>* {
         flex-basis: 5%;
     }
+
+    .loginform {
+        display: block;
+        /* flex-direction: row; */
+        margin-top: 1rem;
+    }
+
+
 }

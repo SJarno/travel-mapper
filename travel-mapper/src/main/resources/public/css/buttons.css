@@ -3,7 +3,7 @@
     color: inherit;
     box-sizing: border-box;
     border: 0.25rem solid rgb(109, 85, 56);
-    /* padding: 0.5rem; */
+
 }
 
 .button:hover {
@@ -14,11 +14,15 @@
 
 
 .submit-button {
-    /* background-color: green; */
     background: linear-gradient(#3c782d, #2f862e, #164416);
     /* background: radial-gradient(#2a9410 33%, #309018 53%, #1b3e0d 82%); */
 }
 
 .delete-button {
 
+}
+
+.login-button {
+    margin-top: 1rem;
+    background: radial-gradient(#8f8d28 14%, #747d20 30%, #3d3e0d 82%);
 }

@@ -10,7 +10,7 @@
 
 <section th:fragment="map-page" onload="loadMap()">
     <article>
-        <h1>Karttasivu</h1>
+        <h1>Paikat</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nihil porro exercitationem sint quidem fugit architecto autem, voluptate eum facere nisi repellat sunt debitis provident inventore ex rem placeat iusto.</p>
     </article>
     <article class="add-map-and-form-container">
@@ -25,5 +25,7 @@
 </section>
 
 <section th:fragment="user-page">
-    <h1>Käyttäjäsivu</h1>
+    <h1>Käyttäjän tiedot</h1>
+    <h3>Käyttäjätunnus: <span th:text="${user.username}"></span></h3>
+    <p> </p>
 </section>

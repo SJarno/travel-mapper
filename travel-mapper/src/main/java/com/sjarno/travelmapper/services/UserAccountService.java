@@ -12,6 +12,8 @@ import com.sjarno.travelmapper.repositories.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +26,9 @@ public class UserAccountService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    /* @Autowired
+    private Authentication authentication; */
+
     @Transactional
     public void createUser(UserAccount userAccount) throws IllegalArgumentException {
         Optional<UserAccount> existingAccountByName = userAccountRepository.findByUsername(userAccount.getUsername());
@@ -35,7 +40,15 @@ public class UserAccountService {
         roles.add("ROLE_USER");
         userAccount.setRoles(roles);
         userAccountRepository.save(userAccount);
-        
+
     }
-    
+
+    public Optional<UserAccount> getAuthenticatedUser() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String username = auth.getName();
+        Optional<UserAccount> user = userAccountRepository.findByUsername(
+                username);
+        return user;
+    }
+
 }

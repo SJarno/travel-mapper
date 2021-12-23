@@ -34,7 +34,12 @@ nav ul {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    text-align: center;
 }
+
+/* nav ul > * {
+    justify-content: center;
+} */
 
 h1 {
     font-size: 4rem;
