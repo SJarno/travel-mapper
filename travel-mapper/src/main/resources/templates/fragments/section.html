@@ -1,7 +1,7 @@
 <section th:fragment="front-page" class="front-page-content">
     <article>
         <h1>Tervetuloa!</h1>
-    <p>Tässä sijaintipalvelussa voit rekisteröityä käyttäjäksi, jonka jälkeen voit oman tilin kautta lisätä sijainteja haluamaasi paikkaan. Jos olet vaikka ulkomaanmatkalla, voit kätevästi tähän palveluun lisätä paikan nimen ja sijaintitiedot, ja vaikka myöhemmin palata asiaan.</p>
+    <p class="info-box">Tässä sijaintipalvelussa voit rekisteröityä käyttäjäksi, jonka jälkeen voit oman tilin kautta lisätä sijainteja haluamaasi paikkaan. Jos olet vaikka ulkomaanmatkalla, voit kätevästi tähän palveluun lisätä paikan nimen ja sijaintitiedot, ja vaikka myöhemmin palata asiaan.</p>
     </article>
     <article >
         <form th:replace="fragments/forms :: register-form"></form>
@@ -11,7 +11,7 @@
 <section th:fragment="map-page" onload="loadMap()">
     <article>
         <h1>Paikat</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nihil porro exercitationem sint quidem fugit architecto autem, voluptate eum facere nisi repellat sunt debitis provident inventore ex rem placeat iusto.</p>
+        <p class="info-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nihil porro exercitationem sint quidem fugit architecto autem, voluptate eum facere nisi repellat sunt debitis provident inventore ex rem placeat iusto.</p>
     </article>
     <article class="add-map-and-form-container">
         <aside>
@@ -27,5 +27,8 @@
 <section th:fragment="user-page">
     <h1>Käyttäjän tiedot</h1>
     <h3>Käyttäjätunnus: <span th:text="${user.username}"></span></h3>
-    <p> </p>
+    <h3>Locations</h3>
+    <ul th:each="location : ${user.locations}">
+        <li th:text="${location.name}"></li>
+    </ul>
 </section>

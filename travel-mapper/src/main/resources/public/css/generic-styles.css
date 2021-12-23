@@ -113,6 +113,8 @@ article h1, article p {
 
 }
 
+
+
 /* Tablet and above */
 @media only screen and (min-width: 768px) {
     #main-content-fragment {

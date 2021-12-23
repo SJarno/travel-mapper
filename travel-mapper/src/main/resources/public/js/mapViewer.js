@@ -1,50 +1,9 @@
 /* Loads map when content is loaded */
-/* const loadMap = async () => {
-
-    navigator.geolocation.getCurrentPosition(function (location) {
-        var latlng = new L.LatLng(location.coords.latitude, location.coords.longitude);
-        var circle = null;
-        var mymap = L.map('map').setView(latlng, 13)
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap',
-            maxZoom: 18,
-        }).addTo(mymap);
-
-        var marker = L.marker(latlng).addTo(mymap);
-        marker.bindPopup("Nykyinen sijainti");
-
-        var popup = L.popup();
-
-        function onMapClick(e) {
-            if (circle !== null) {
-                mymap.removeLayer(circle);
-            }
-            popup
-                .setLatLng(e.latlng)
-                .setContent('Latitude: ' + e.latlng.lat.toString() + '\nLongitude: ' + e.latlng.lng.toString())
-                .openOn(mymap);
-
-            document.getElementById("locationLatitude").value = e.latlng.lat;
-            document.getElementById("locationLongitude").value = e.latlng.lng;
-
-            circle = L.circle(e.latlng, {
-                color: 'red',
-                fillColor: '#f03',
-                fillOpacity: 0.5,
-                radius: 10
-            }).addTo(mymap);
-            
-        }
-
-        mymap.on('click', onMapClick);
-
-    });
-
-}; */
+//const url = contextRoot;
 
 const loadMap = async () => {
     var map = L.map('map').fitWorld();
-    var circle = null;
+    var userLocation = null;
     var popup = L.popup();
 
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -53,7 +12,10 @@ const loadMap = async () => {
     }).addTo(map);
     /* locate current position: */
     map.locate({ setView: true, maxZoom: 16 });
+
+    loadLocations(map);
     
+    /* Function for adding marker on users location */
     function onLocationFound(e) {
         var radius = e.accuracy;
         L.marker(e.latlng).addTo(map)
@@ -69,8 +31,8 @@ const loadMap = async () => {
         alert(e.message);
     }
     function onMapClick(e) {
-        if (circle !== null) {
-            map.removeLayer(circle);
+        if (userLocation !== null) {
+            map.removeLayer(userLocation);
         }
         popup
             .setLatLng(e.latlng)
@@ -80,7 +42,7 @@ const loadMap = async () => {
         document.getElementById("locationLatitude").value = e.latlng.lat;
         document.getElementById("locationLongitude").value = e.latlng.lng;
 
-        circle = L.circle(e.latlng, {
+        userLocation = L.circle(e.latlng, {
             color: 'red',
             fillColor: '#f03',
             fillOpacity: 0.5,
@@ -96,5 +58,21 @@ const loadMap = async () => {
 const getCurrentPosition = async (map) => {
     map.locate({ setView: true, maxZoom: 16 });
 };
+
+/* Write a function for fetching locations here */
+async function loadLocations(map) {
+    let response = await fetch(url+"locations/all", {
+        headers: {
+            "Accept": "application/json"
+        }
+    });
+    let locations = await response.json();
+    locations.forEach(location => {
+        let marker = L.marker([location.latitude, location.longitude]);
+        marker.bindPopup(location.name);
+        marker.addTo(map);
+        L.DomUtil.addClass(marker._icon, 'testi');
+    });
+}
 
 

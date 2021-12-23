@@ -26,8 +26,7 @@ public class UserAccountService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    /* @Autowired
-    private Authentication authentication; */
+    
 
     @Transactional
     public void createUser(UserAccount userAccount) throws IllegalArgumentException {
