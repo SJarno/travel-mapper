@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    private SecurityUserAccountDetailsService userDetailsService;
+    private CustomUserAccountDetailsService userDetailsService;
 
     protected void configure(HttpSecurity http) throws Exception {
         //.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
@@ -44,8 +44,6 @@ public class SecSecurityConfiguration extends WebSecurityConfigurerAdapter {
             
 
         http.logout()
-            /* .logoutSuccessUrl("/index")
-            .deleteCookies("cookieNamesToClear") */
             .clearAuthentication(true)
             .permitAll()
             .and()

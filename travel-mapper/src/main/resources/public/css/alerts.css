@@ -1,0 +1,22 @@
+.alert {
+    margin-top: 16rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    border-radius: 0.5rem;
+}
+
+.alert-error {
+    padding: 1rem;
+    text-align: center;
+    width: fit-content;
+    background-color: rgb(175 48 48 / 80%);
+}
+
+.alert-success {
+    padding: 1rem;
+    text-align: center;
+    width: fit-content;
+    background-color: rgb(156 163 41 / 80%);
+}

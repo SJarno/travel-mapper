@@ -1,13 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="fragments/head :: head-fragment"></head>
+
 <body onload="loadFragment('front-page')">
     <header th:replace="fragments/header :: main-header"></header>
+    <!-- Error message -->
+    <div th:if="${registerError}" class="alert"><span>
+        <div class="alert-content alert-error">
+            <p th:text="${registerError}"></p>
+        </span>
+        <button type="button" class="btn-close" onclick="closeAlert()">X</button>
+        </div>     
+    </div>
+    <div th:if="${registerSuccess}" class="alert"><span>
+        <div class="alert-content alert-success">
+            <p th:text="${registerSuccess}"></p>
+        </span>
+        <button type="button" class="btn-close" onclick="closeAlert()">X</button>
+        </div>     
+    </div>
     <main>
         <section id="main-content-fragment"></section>
     </main>
-    
+
     <footer th:replace="fragments/footer :: main-footer"></footer>
-    
+
 </body>
+
 </html>
