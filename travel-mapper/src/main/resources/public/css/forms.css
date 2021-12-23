@@ -2,6 +2,12 @@
     --main-form-bg-color: darkkhaki;
 }
 
+.loginform  {
+    font-size: 4rem;
+    /* display: flex;
+    flex-direction: column; */
+}
+
 .register-form-container {
     /* background: var(--main-form-bg-color); */
     background: linear-gradient(174deg, var(--main-form-bg-color), rgb(146 103 39));
@@ -71,6 +77,9 @@
         text-align: unset;
         display: table-cell;
 
+    }
+    .loginform  {
+        flex-direction: row;
     }
 }
 

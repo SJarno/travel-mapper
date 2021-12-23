@@ -1,5 +1,5 @@
 <!-- Register form -->
-<form th:action="@{/testi}" method="post" th:fragment="register-form" class="register-form-container">
+<form th:action="@{/register}" method="post" th:fragment="register-form" class="register-form-container" th:object="${userAccount}">
     <table>
         <thead>
             <tr>
@@ -13,13 +13,13 @@
                 <td>
                     <label for="username">Käyttäjätunnus: </label>   
                 </td>
-                <td><input type="text" name="username"></td>
+                <td><input type="text" th:name="username"></td>
             </tr>
             <tr>
                 <td>
                     <label for="password">Salasana: </label>
                 </td>
-                <td><input type="password" name="password"></td>
+                <td><input type="password" th:name="password"></td>
             </tr>
         </tbody>
         <tfoot>

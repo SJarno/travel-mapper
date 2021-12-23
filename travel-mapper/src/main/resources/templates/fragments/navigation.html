@@ -1,7 +1,34 @@
 <nav th:fragment="main-navigation">
     <ul>
-        <li onclick="loadFragment('front-page')" class="nav-button"><h3>Etusivu</h3></li>
-        <li onclick="loadFragment('map-page')" class="nav-button"><h3>Karttasivu</h3></li>
-        <li onclick="loadFragment('user-page')" class="nav-button"><h3>Käyttäjätili</h3></li>
+        <li onclick="loadFragment('front-page')" class="nav-button">
+            <h3>Etusivu</h3>
+        </li>
+
+        <li onclick="loadFragment('map-page')" class="nav-button" sec:authorize="isAuthenticated()">
+            <h3>Karttasivu</h3>
+        </li>
+        <li onclick="loadFragment('user-page')" class="nav-button" sec:authorize="isAuthenticated()">
+            <h3>Käyttäjätili</h3>
+        </li>
+        <li>
+            <form th:action="@{/login}" th:method="post" class="loginform" sec:authorize="isAnonymous()">
+                <label for="username">Tunnus: </label>
+                <input type="text" th:name="username">
+                <label for="password">Salasana: </label>
+                <input type="password" th:name="password">
+                <input type="submit" value="Kirjaudu sisään">
+            </form>
+            <form th:action="@{/logout}" th:method="post" sec:authorize="isAuthenticated()" class="loginform">
+                <input type="submit" value="Kirjaudu ulos">
+            </form>
+        </li>
     </ul>
+    <!-- <form action="" method="post" class="loginform" sec:authorize="isAnonymous()" >
+        <ul>
+            <li><label for="username">Tunnus: </label></li>
+            <li><input type="text" name="username"></li>
+            <li><label for="password">Salasana: </label></li>
+            <li><input type="password" name="password"></li>
+        </ul>
+    </form> -->
 </nav>
