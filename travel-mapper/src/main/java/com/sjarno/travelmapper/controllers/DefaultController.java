@@ -52,7 +52,7 @@ public class DefaultController {
             List<String> errors = result.getAllErrors().stream()
                 .map(e -> e.getDefaultMessage())
                 .collect(Collectors.toList());
-            model.addAttribute("registerError", errors);
+            model.addAttribute("error", errors);
             return "index";
         }
 
@@ -62,7 +62,7 @@ public class DefaultController {
             model.addAttribute("registerError", e.getMessage());
             return "index";
         }
-        redirectAttributes.addFlashAttribute("registerSuccess", "Käyttäjä luotu! Kirjaudu sisään palveluun.");
+        redirectAttributes.addFlashAttribute("success", "Käyttäjä luotu! Kirjaudu sisään palveluun.");
         return "redirect:/index";
     }
     

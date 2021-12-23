@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class LocationController {
@@ -26,18 +27,24 @@ public class LocationController {
         return locationService.getAllLocations();
     }
 
-    //@ResponseBody
+    // @ResponseBody
     @PostMapping("/locations/add")
     public String addNewLocation(
-        @RequestParam String locationName,
-        @RequestParam double latitude,
-        @RequestParam double longitude) {
-        
-        Location location = locationService.saveLocation(
-            locationName,
-            latitude,
-            longitude);
+            @RequestParam String locationName,
+            @RequestParam double latitude,
+            @RequestParam double longitude,
+            RedirectAttributes redirectAttributes) {
+
+        try {
+            Location location = locationService.saveLocation(
+                    locationName,
+                    latitude,
+                    longitude);
+            
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", e.getMessage());
+        }
         return "redirect:/index";
     }
-    
+
 }
