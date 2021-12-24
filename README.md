@@ -2,7 +2,7 @@
 Demo app for storing locations and displaying them on a map.
 
 ## Features
-User registration, and saving location based coordinates via Leaflet to database, and also retrieving a.m locations.
+User can register to the service, where there is an option for saving different locations via map.
 
 ## Other
 Leaflet for map.
