@@ -1,6 +1,10 @@
 # Travel mapper app
 Demo app for storing locations and displaying them on a map.
 
+You can find the app in production here: https://travelafar.herokuapp.com/index
+
+Please note, that this is a work in progress, and the database will be resetted from time to time.
+
 ## Features
 User can register to the service, where there is an option for saving different locations via map.
 
