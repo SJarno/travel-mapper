@@ -18,6 +18,6 @@
     padding: 2rem;
 }
 
-th, td {
+.locations-info th, .locations-info td {
     text-align: left;
 }
