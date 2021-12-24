@@ -1,18 +1,23 @@
 .locations-info {
     background-color: rgba(10, 10, 10, 40%);
+    overflow-x: auto;
 }
 
 .locations-info table {
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
-.locations-info td {
+.locations-info table, .locations-info th, .locations-info td {
+    border: 1px solid rgb(243, 234, 234);
+}
+
+.locations-info td, .locations-info th {
     font-size: 2rem;
     padding: 2rem;
 }
 
 th, td {
-    text-align: center;
+    text-align: left;
 }
