@@ -24,18 +24,19 @@
 
 .login-button {
     background: radial-gradient(#8f8d28 14%, #747d20 30%, #3d3e0d 82%);
+    padding: 0.5rem;
 }
 
 @media only screen and (min-width: 768px) {
     .login-button {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
 }
 
 /* iPad pro and bigger */
 @media only screen and (min-width: 1024px) {
     .login-button {
-        margin-top: 1rem;
+        margin-top: 0.5rem;
     }
 }
 
