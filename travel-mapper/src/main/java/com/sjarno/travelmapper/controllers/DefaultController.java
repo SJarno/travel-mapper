@@ -1,17 +1,14 @@
 package com.sjarno.travelmapper.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
 import com.sjarno.travelmapper.models.UserAccount;
-import com.sjarno.travelmapper.repositories.UserAccountRepository;
 import com.sjarno.travelmapper.services.UserAccountService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
