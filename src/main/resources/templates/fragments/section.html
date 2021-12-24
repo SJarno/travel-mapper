@@ -1,9 +1,11 @@
 <section th:fragment="front-page" class="front-page-content">
     <article>
         <h1>Tervetuloa!</h1>
-    <p class="info-box">Tässä sijaintipalvelussa voit rekisteröityä käyttäjäksi, jonka jälkeen voit oman tilin kautta lisätä sijainteja haluamaasi paikkaan. Jos olet vaikka ulkomaanmatkalla, voit kätevästi tähän palveluun lisätä paikan nimen ja sijaintitiedot, ja vaikka myöhemmin palata asiaan.</p>
+        <p class="info-box">Tässä sijaintipalvelussa voit rekisteröityä käyttäjäksi, jonka jälkeen voit oman tilin
+            kautta lisätä sijainteja haluamaasi paikkaan. Jos olet vaikka ulkomaanmatkalla, voit kätevästi tähän
+            palveluun lisätä paikan nimen ja sijaintitiedot, ja vaikka myöhemmin palata asiaan.</p>
     </article>
-    <article >
+    <article>
         <form th:replace="fragments/forms :: register-form"></form>
     </article>
 </section>
@@ -11,7 +13,9 @@
 <section th:fragment="map-page" onload="loadMap()">
     <article>
         <h1>Paikat</h1>
-        <p class="info-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nihil porro exercitationem sint quidem fugit architecto autem, voluptate eum facere nisi repellat sunt debitis provident inventore ex rem placeat iusto.</p>
+        <p class="info-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nihil porro exercitationem
+            sint quidem fugit architecto autem, voluptate eum facere nisi repellat sunt debitis provident inventore ex
+            rem placeat iusto.</p>
     </article>
     <article class="add-map-and-form-container">
         <aside>
@@ -25,10 +29,37 @@
 </section>
 
 <section th:fragment="user-page">
-    <h1>Käyttäjän tiedot</h1>
-    <h3>Käyttäjätunnus: <span th:text="${user.username}"></span></h3>
-    <h3>Locations</h3>
-    <ul th:each="location : ${user.locations}">
-        <li th:text="${location.name}"></li>
-    </ul>
+    <article>
+        <h1>Valikko</h1>
+    </article>
+    <article  class="user-info">
+        <h2>Käyttäjän tiedot</h2>
+        <h3>Käyttäjätunnus: <span th:text="${user.username}"></span></h3>
+    </article>
+    <article class="locations-info">
+        <table>
+            <thead>
+                <tr>
+                    <th><h2>Sijainnit</h2></th>
+                </tr>
+                <tr>
+                    <th><h4>Paikan nimi</h4></th>
+                    <th><h4>Latitude</h4></th>
+                    <th><h4>Longitude</h4></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="location : ${user.locations}">
+                    <td th:text="${location.name}"></td>
+                    <td th:text="${location.latitude}"></td>
+                    <td th:text="${location.longitude}"></td>
+                </tr>
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+        
+        <ul >
+            <li ></li>
+        </ul>
+    </article>
 </section>

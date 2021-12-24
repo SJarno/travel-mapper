@@ -39,6 +39,7 @@ public class LocationController {
                     locationName,
                     latitude,
                     longitude);
+            redirectAttributes.addFlashAttribute("success", "Sijainti lisätty!");
             
         } catch (Exception e) {
             redirectAttributes.addFlashAttribute("error", e.getMessage());
