@@ -18,13 +18,21 @@
             rem placeat iusto.</p>
     </article>
     <article class="add-map-and-form-container">
-        <aside>
-            <form th:replace="fragments/forms :: add-location-form">
-            </form>
+        <aside class="add-location-header">
+            <h2>Kartta</h2>
+            <!-- <form th:replace="fragments/forms :: add-location-form">
+            </form> -->
         </aside>
         <figure class="map-container">
             <div id="map"></div>
         </figure>
+        <aside class="add-location-footer accordion" onclick="toggleAccordion()">
+            <h2>Lisää sijainti</h2>
+        </aside>
+        <div class="panel" id="panelForm">
+            <form th:replace="fragments/forms :: add-location-form">
+            </form>
+        </div>
     </article>
 </section>
 

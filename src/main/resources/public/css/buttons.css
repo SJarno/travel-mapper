@@ -1,6 +1,6 @@
 .button {
     border-radius: 0.5rem;
-    color: inherit;
+    color: var(--main-font-color);
     box-sizing: border-box;
     border: 0.25rem solid rgb(109, 85, 56);
 

@@ -78,7 +78,8 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     margin: 2rem;
-    min-height: 53rem;
+    min-height: 50rem;
+    padding-bottom: 1rem;
 
 }
 
