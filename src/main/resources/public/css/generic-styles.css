@@ -130,7 +130,7 @@ article h1, article p {
     }
 
     nav ul {
-        flex-direction: row;
+        flex-direction: column;
     }
     .nav-button:hover {
         background-color: unset;
@@ -144,6 +144,9 @@ article h1, article p {
 @media only screen and (min-width: 1024px) {
     main {
         min-height: 117rem;
+    }
+    nav ul {
+        flex-direction: row;
     }
 }
 

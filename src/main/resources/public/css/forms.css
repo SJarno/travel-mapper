@@ -3,17 +3,14 @@
 }
 
 .loginform {
-    /* font-size: 4rem; */
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* width: fit-content; */
     text-align: center;
 }
 
-/* .loginform>* {
-    flex-basis: 100%;
-} */
+.loginform>* {
+    flex-basis: 10%;
+}
 
 .register-form-container {
     /* background: var(--main-form-bg-color); */
@@ -86,8 +83,9 @@
     }
 
     .loginform {
-        flex-direction: column;
-
+        /* flex-direction: column;
+        justify-content: center; */
+        display: inline-block;
 
     }
 
@@ -96,16 +94,28 @@
     }
 }
 
-/* iPad pro and bigger */
+/* iPad pro/laptop and bigger */
 @media only screen and (min-width: 1024px) {
     .add-location-form ul>* {
         flex-basis: 5%;
     }
 
     .loginform {
-        display: block;
-        /* flex-direction: row; */
+        display: flex;
+        flex-direction: column;
         margin-top: 1rem;
+    }
+
+
+}
+
+@media only screen and (min-width: 1210px) {
+
+
+    .loginform {
+        display: inline-block;
+        /* flex-direction: row; */
+        /* margin-top: 1rem; */
     }
 
 

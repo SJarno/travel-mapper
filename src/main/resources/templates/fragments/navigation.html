@@ -3,7 +3,7 @@
         <li onclick="loadFragment('info-page')" class="nav-button">
             <h1>Matkaajapalvelu</h1>
         </li>
-        <li onclick="loadFragment('register-page')" class="nav-button" >
+        <li onclick="loadFragment('register-page')" class="nav-button" sec:authorize="isAnonymous()">
             <h3>Rekisteröidy</h3>
         </li>
         <li onclick="loadFragment('map-page')" class="nav-button" sec:authorize="isAuthenticated()">
@@ -18,6 +18,9 @@
                 <input type="text" th:name="username">
                 <label for="password">Salasana: </label>
                 <input type="password" th:name="password">
+                <label>
+                    <input type="checkbox" checked="checked" name="remember-me"> Remember me
+                  </label>
                 <input type="submit" value="Kirjaudu sisään" class="button login-button">
             </form>
             <form th:action="@{/logout}" th:method="post" sec:authorize="isAuthenticated()" class="loginform">

@@ -44,9 +44,14 @@ public class DevSecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.logout()
             .logoutSuccessUrl("/")
             .clearAuthentication(true)
+            .deleteCookies("JSESSIONID")
             .permitAll()
             .and()
             .csrf().disable();
+
+        http.authorizeRequests()
+            .and()
+            .rememberMe().rememberMeParameter("remember-me").tokenValiditySeconds(86400); // lasts for a day
         
         
             
