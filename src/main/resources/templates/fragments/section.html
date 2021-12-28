@@ -1,9 +1,18 @@
-<section th:fragment="front-page" class="front-page-content">
+<section th:fragment="info-page">
     <article>
         <h1>Tervetuloa!</h1>
         <p class="info-box">Tässä sijaintipalvelussa voit rekisteröityä käyttäjäksi, jonka jälkeen voit oman tilin
             kautta lisätä sijainteja haluamaasi paikkaan. Jos olet vaikka ulkomaanmatkalla, voit kätevästi tähän
             palveluun lisätä paikan nimen ja sijaintitiedot, ja vaikka myöhemmin palata asiaan.</p>
+    </article>
+</section>
+
+<section th:fragment="register-page" class="front-page-content">
+    <article>
+        <h1>Rekisteröinti</h1>
+        <p class="info-box">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Esse voluptatem tempora quo enim voluptas officiis iure error porro facilis in doloribus dolorem aut itaque corrupti, 
+            placeat quos cum vero laboriosam.</p>
     </article>
     <article>
         <form th:replace="fragments/forms :: register-form"></form>
@@ -20,8 +29,6 @@
     <article class="add-map-and-form-container">
         <aside class="add-location-header">
             <h2>Kartta</h2>
-            <!-- <form th:replace="fragments/forms :: add-location-form">
-            </form> -->
         </aside>
         <figure class="map-container">
             <div id="map"></div>
@@ -40,7 +47,7 @@
     <article>
         <h1>Valikko</h1>
     </article>
-    <article  class="user-info">
+    <article class="user-info">
         <h3>Käyttäjän tiedot</h3>
         <h4>Käyttäjätunnus: <span th:text="${user.username}"></span></h4>
     </article>
@@ -48,12 +55,20 @@
         <table>
             <thead>
                 <tr>
-                    <th colspan="3"><h3>Sijainnit</h3></th>
+                    <th colspan="3">
+                        <h3>Sijainnit</h3>
+                    </th>
                 </tr>
                 <tr>
-                    <th><h4>Paikan nimi</h4></th>
-                    <th><h4>Latitude</h4></th>
-                    <th><h4>Longitude</h4></th>
+                    <th>
+                        <h4>Paikan nimi</h4>
+                    </th>
+                    <th>
+                        <h4>Latitude</h4>
+                    </th>
+                    <th>
+                        <h4>Longitude</h4>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -65,9 +80,9 @@
             </tbody>
             <tfoot></tfoot>
         </table>
-        
-        <ul >
-            <li ></li>
+
+        <ul>
+            <li></li>
         </ul>
     </article>
 </section>

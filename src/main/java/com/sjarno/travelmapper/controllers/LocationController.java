@@ -4,21 +4,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.sjarno.travelmapper.models.Location;
 import com.sjarno.travelmapper.services.LocationService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -39,28 +38,28 @@ public class LocationController {
     public ResponseEntity<?> addNewLocation(
             @RequestParam String locationName,
             @RequestParam double latitude,
-            @RequestParam double longitude,
-            RedirectAttributes redirectAttributes) {
+            @RequestParam double longitude) throws NumberFormatException, MethodArgumentTypeMismatchException {
 
         System.out.println();
         System.out.println("Tultiin oikeaan paikkaan!");
         System.out.println();
 
+
         try {
-            Location location = locationService.saveLocation(
+            locationService.saveLocation(
                     locationName,
                     latitude,
                     longitude);
+            
             return ResponseEntity.status(HttpStatus.CREATED).build();
 
         } catch (Exception e) {
-            
-            Map<String, String> response = new HashMap<>();
-            response.put("errorMessage", e.getMessage());
-        
-            /* Unprocessable entity on wrong user input: https://stackoverflow.com/questions/7939137/right-http-status-code-to-wrong-input  */
+            /*
+             * Unprocessable entity on wrong user input:
+             * https://stackoverflow.com/questions/7939137/right-http-status-code-to-wrong-
+             * input
+             */
             return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).header("error", e.getMessage()).build();
-            
 
         }
 

@@ -22,7 +22,7 @@ public class DevSecurityConfiguration extends WebSecurityConfigurerAdapter {
         //.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
 
         String[] whitelistGet = new String[] {
-            "/css/**", "/images/**", "/js/**" };
+            "/css/**", "/images/**", "/js/**", };
         String[] whitelistPost = new String[] {
             "/register", "/login"
         };
@@ -31,7 +31,7 @@ public class DevSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     
         http.authorizeRequests()
-            .antMatchers(HttpMethod.GET, "/front-page").permitAll()
+            .antMatchers(HttpMethod.GET, "/register-page", "/info-page").permitAll()
             .antMatchers(HttpMethod.POST, whitelistPost).permitAll()
             .antMatchers(whitelistGet).permitAll()
             .anyRequest().authenticated()

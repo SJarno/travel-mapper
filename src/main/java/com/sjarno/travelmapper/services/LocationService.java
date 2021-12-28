@@ -23,10 +23,12 @@ public class LocationService {
     private UserAccountService userAccountService;
 
     @Transactional
-    public Location saveLocation(String name, double latitude, double longitude) throws IllegalArgumentException{
+    public Location saveLocation(String name, double latitude, double longitude) throws IllegalArgumentException, NumberFormatException {
         if (name.isBlank()) {
             throw new IllegalArgumentException("Paikan nimi ei saa olla tyhjä");
         }
+        
+        
         Optional<UserAccount> userAccount = userAccountService.getAuthenticatedUser();
         if (userAccount.isPresent()) {
             Location location = new Location();

@@ -30,7 +30,7 @@ public class ProdSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     
         http.authorizeRequests()
-            .antMatchers(HttpMethod.GET, "/front-page").permitAll()
+            .antMatchers(HttpMethod.GET, "/register-page", "/info-page").permitAll()
             .antMatchers(HttpMethod.POST, whitelistPost).permitAll()
             .antMatchers(whitelistGet).permitAll()
             .anyRequest().authenticated()

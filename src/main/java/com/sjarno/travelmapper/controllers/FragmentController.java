@@ -6,9 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class FragmentController {
 
-    @GetMapping("/front-page")
+    @GetMapping("/info-page")
+    public String getInfoPage() {
+        return "fragments/section :: info-page";
+    }
+
+    @GetMapping("/register-page")
     public String getFrontFragment() {
-        return "fragments/section :: front-page";
+        return "fragments/section :: register-page";
     }
 
     @GetMapping("/map-page")

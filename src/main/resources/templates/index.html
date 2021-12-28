@@ -2,9 +2,10 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="fragments/head :: head-fragment"></head>
-
-<body onload="loadFragment('front-page')">
+<!--  -->
+<body>
     <header th:replace="fragments/header :: main-header"></header>
+    
     <!-- Generic erros here: -->
     <div th:if="${error}" class="alert position"><span>
         <div class="alert-content alert-error">

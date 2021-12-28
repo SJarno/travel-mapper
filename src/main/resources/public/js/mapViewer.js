@@ -84,7 +84,7 @@ async function addLocation(event, form) {
     });
     event.preventDefault();
     let data = (await response);
-
+    console.log("Vastaus: "+data.status);
     /* console.log((await response).json()); */
     if ((await response).status === 201) {
         loadLocations(map);

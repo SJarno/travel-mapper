@@ -1,9 +1,11 @@
 <nav th:fragment="main-navigation">
     <ul>
-        <li onclick="loadFragment('front-page')" class="nav-button">
+        <li onclick="loadFragment('info-page')" class="nav-button">
             <h1>Matkaajapalvelu</h1>
         </li>
-
+        <li onclick="loadFragment('register-page')" class="nav-button" >
+            <h3>Rekisteröidy</h3>
+        </li>
         <li onclick="loadFragment('map-page')" class="nav-button" sec:authorize="isAuthenticated()">
             <h3>Karttasivu</h3>
         </li>
