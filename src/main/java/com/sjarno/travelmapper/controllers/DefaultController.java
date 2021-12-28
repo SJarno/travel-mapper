@@ -56,7 +56,7 @@ public class DefaultController {
         try {
             userAccountService.createUser(userAccount);
         } catch (Exception e) {
-            model.addAttribute("registerError", e.getMessage());
+            model.addAttribute("error", e.getMessage());
             return "index";
         }
         redirectAttributes.addFlashAttribute("success", "Käyttäjä luotu! Kirjaudu sisään palveluun.");
