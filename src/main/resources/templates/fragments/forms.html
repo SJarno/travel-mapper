@@ -33,10 +33,21 @@
 </form>
 
 <!-- Add new location form -->
-<form th:action="@{/locations/add}" method="post" th:fragment="add-location-form" class="add-location-form">
+<!-- <form th:action="@{/locations/add}" method="post" th:fragment="add-location-form" class="add-location-form">
     <ul>
         <li><label for="locationName">Nimi: </label></li>
         <li><input type="text" th:name="locationName" id="locationName"></li>
+        <li><label for="latitude">Latitude: </label></li>
+        <li><input type="number" step="any" name="latitude" id="locationLatitude" value="0"></li>
+        <li><label for="longitude">Longitude: </label></li>
+        <li><input type="number" step="any" name="longitude" id="locationLongitude" value="0"></li>
+        <li><input type="submit" value="Tallenna" class="button submit-button"></li>
+    </ul>
+</form> -->
+<form onsubmit="addLocation(event, this)" action="/locations/add"  method="post" th:fragment="add-location-form" class="add-location-form" >
+    <ul>
+        <li><label for="locationName">Nimi: </label></li>
+        <li><input type="text" name="locationName" id="locationName"></li>
         <li><label for="latitude">Latitude: </label></li>
         <li><input type="number" step="any" name="latitude" id="locationLatitude" value="0"></li>
         <li><label for="longitude">Longitude: </label></li>

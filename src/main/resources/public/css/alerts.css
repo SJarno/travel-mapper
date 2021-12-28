@@ -5,6 +5,7 @@
     width: 100%;
     position: absolute;
     border-radius: 0.5rem;
+    z-index: 9999;
 }
 
 .alert-error {
@@ -23,4 +24,23 @@
 
 .alert-login {
     margin-top: 2rem;
+}
+
+#generic-error {
+    display: none;
+    margin-top: 60rem;
+}
+
+#generic-success {
+    display: none;
+    margin-top: 60rem;
+}
+
+@media only screen and (min-width: 768px) {
+    #generic-error {
+        margin-top: 30rem;
+    }
+    #generic-success {
+        margin-top: 30rem;
+    }
 }

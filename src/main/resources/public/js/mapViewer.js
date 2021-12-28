@@ -1,8 +1,9 @@
 /* Loads map when content is loaded */
-//const url = contextRoot;
+let map = null;
+/* console.log(map); */
 
 const loadMap = async () => {
-    var map = L.map('map').fitWorld();
+    map = L.map('map').fitWorld();
     var userLocation = null;
     var popup = L.popup();
 
@@ -14,19 +15,19 @@ const loadMap = async () => {
     map.locate({ setView: true, maxZoom: 16 });
 
     loadLocations(map);
-    
+
     /* Function for adding marker on users location */
     function onLocationFound(e) {
         var radius = e.accuracy;
         L.marker(e.latlng).addTo(map)
             .bindPopup("You are within " + radius + " meters from this point").openPopup();
-    
+
         L.circle(e.latlng, radius).addTo(map);
 
         /* var marker = L.marker(e.latlng).addTo(map);
         marker.bindPopup("Nykyinen sijainti"); */
     }
-    
+
     function onLocationError(e) {
         alert(e.message);
     }
@@ -48,7 +49,7 @@ const loadMap = async () => {
             fillOpacity: 0.5,
             radius: 10
         }).addTo(map);
-        
+
     }
     map.on('locationfound', onLocationFound);
     map.on('locationerror', onLocationError);
@@ -61,7 +62,7 @@ const getCurrentPosition = async (map) => {
 
 /* Write a function for fetching locations here */
 async function loadLocations(map) {
-    let response = await fetch(url+"locations/all", {
+    let response = await fetch(url + "locations/all", {
         headers: {
             "Accept": "application/json"
         }
@@ -75,4 +76,46 @@ async function loadLocations(map) {
     });
 }
 
+/*  */
+async function addLocation(event, form) {
+    let response = fetch(form.action, {
+        method: 'post',
+        body: new FormData(form)
+    });
+    event.preventDefault();
+    let data = (await response);
+
+    /* console.log((await response).json()); */
+    if ((await response).status === 201) {
+        loadLocations(map);
+        console.log(data);
+        displaySuccess("Sijainti lisätty!")
+    } else {
+        console.log(data.headers);
+        displayError(data.headers.get("error"));
+    }
+   
+
+}
+
+/* Write a function on success */
+async function displaySuccess(successMessage) {
+    let alertDiv = document.querySelector("#generic-success")
+    
+    /* alertDiv.style.marginTop = margin+"rem"; */
+    alertDiv.style.display = "flex";
+    let errorContainer = alertDiv.querySelector(".messageContainer");
+    errorContainer.innerHTML = successMessage;
+}
+
+/* Write a function on error */
+async function displayError(errorMessage) {
+    let alertDiv = document.querySelector("#generic-error")
+    
+    /* alertDiv.style.marginTop = margin+"rem"; */
+    alertDiv.style.display = "flex";
+    let errorContainer = alertDiv.querySelector(".messageContainer");
+    errorContainer.innerHTML = errorMessage;
+    
+}
 
