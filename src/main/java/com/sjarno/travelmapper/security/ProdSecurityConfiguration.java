@@ -46,6 +46,10 @@ public class ProdSecurityConfiguration extends WebSecurityConfigurerAdapter {
             .permitAll()
             .and()
             .csrf().disable();
+
+            http.authorizeRequests()
+            .and()
+            .rememberMe().rememberMeParameter("remember-me").tokenValiditySeconds(86400); // lasts for a day
         
         
             
