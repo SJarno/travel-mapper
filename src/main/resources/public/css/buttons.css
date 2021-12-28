@@ -1,6 +1,6 @@
 .button {
     border-radius: 0.5rem;
-    color: var(--main-font-color);
+    color: #dee0ce;
     box-sizing: border-box;
     border: 0.25rem solid rgb(109, 85, 56);
 
@@ -8,7 +8,12 @@
 
 .button:hover {
     cursor: pointer;
-    color: rgb(185, 185, 165);
+    color: rgb(233, 233, 188);
+    border: 0.25rem solid rgb(139, 105, 67);
+}
+
+.button:active {
+    color: rgb(146, 146, 130);
     border: 0.25rem solid rgb(75, 58, 38);
 }
 

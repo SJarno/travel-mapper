@@ -23,8 +23,6 @@ public class DefaultController {
     @Autowired
     private UserAccountService userAccountService;
 
-    
-
     @ModelAttribute
     private UserAccount userAccount() {
         return new UserAccount();
@@ -34,21 +32,23 @@ public class DefaultController {
     public String home() {
         return "redirect:/index";
     }
-    @GetMapping("/index") 
+
+    @GetMapping("/index")
     public String index() {
         return "index";
     }
+
     @PostMapping("/register")
     public String registerUser(
-        @Valid @ModelAttribute UserAccount userAccount,
-        BindingResult result,
-        Model model,
-        RedirectAttributes redirectAttributes) {
-        
+            @Valid @ModelAttribute UserAccount userAccount,
+            BindingResult result,
+            Model model,
+            RedirectAttributes redirectAttributes) {
+
         if (result.hasErrors()) {
             List<String> errors = result.getAllErrors().stream()
-                .map(e -> e.getDefaultMessage())
-                .collect(Collectors.toList());
+                    .map(e -> e.getDefaultMessage())
+                    .collect(Collectors.toList());
             model.addAttribute("error", errors);
             return "index";
         }
@@ -62,5 +62,5 @@ public class DefaultController {
         redirectAttributes.addFlashAttribute("success", "Käyttäjä luotu! Kirjaudu sisään palveluun.");
         return "redirect:/index";
     }
-    
+
 }

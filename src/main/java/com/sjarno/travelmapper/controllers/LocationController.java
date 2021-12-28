@@ -58,8 +58,8 @@ public class LocationController {
             Map<String, String> response = new HashMap<>();
             response.put("errorMessage", e.getMessage());
         
-            /* return ResponseEntity.status(HttpStatus.FORBIDDEN).body(response); */
-            return ResponseEntity.status(HttpStatus.PARTIAL_CONTENT).header("error", e.getMessage()).build();
+            /* Unprocessable entity on wrong user input: https://stackoverflow.com/questions/7939137/right-http-status-code-to-wrong-input  */
+            return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).header("error", e.getMessage()).build();
             
 
         }
