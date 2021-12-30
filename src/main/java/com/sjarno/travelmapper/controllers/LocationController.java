@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
@@ -38,10 +39,14 @@ public class LocationController {
     public ResponseEntity<?> addNewLocation(
             @RequestParam String locationName,
             @RequestParam double latitude,
-            @RequestParam double longitude) throws NumberFormatException, MethodArgumentTypeMismatchException {
+            @RequestParam double longitude,
+            @RequestParam(required = false) MultipartFile image,
+            @RequestParam(required = false) String description
+            ) throws NumberFormatException, MethodArgumentTypeMismatchException {
 
         System.out.println();
         System.out.println("Tultiin oikeaan paikkaan!");
+        System.out.println("Kuvaus: "+description);
         System.out.println();
 
 

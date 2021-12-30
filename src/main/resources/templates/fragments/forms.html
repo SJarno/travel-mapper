@@ -35,13 +35,33 @@
 </form>
 
 <form onsubmit="addLocation(event, this)" action="/locations/add"  method="post" th:fragment="add-location-form" class="add-location-form" >
-    <ul>
-        <li><label for="locationName">Nimi: </label></li>
-        <li><input type="text" name="locationName" id="locationName"></li>
-        <li><label for="latitude">Latitude: </label></li>
-        <li><input type="number" step="any" name="latitude" id="locationLatitude" value="0"></li>
-        <li><label for="longitude">Longitude: </label></li>
-        <li><input type="number" step="any" name="longitude" id="locationLongitude" value="0"></li>
-        <li><input type="submit" value="Tallenna" class="button submit-button"></li>
-    </ul>
+    <table>
+        <tbody>
+            <tr>
+                <td><label for="locationName">Nimi: </label></td>
+                <td><input type="text" name="locationName" id="locationName"></td>
+            </tr>
+            <tr>
+                <td><label for="latitude">Latitude: </label></td>
+                <td><input type="number" step="any" name="latitude" id="locationLatitude" value="0"></td>
+            </tr>
+            <tr>
+                <td><label for="longitude">Longitude: </label></td>
+                <td><input type="number" step="any" name="longitude" id="locationLongitude" value="0"></td>
+            </tr>
+            <tr class="add-img-container">
+                <td><label for="locationImage" class="fas fa-camera"></label></td>
+                <td><input type="file" name="locationImage" id="locationImage"></td>
+            </tr>
+            <tr>
+                <td><label for="description">Paikan kuvaus: </label></td>
+                <td><textarea name="description"  cols="30" rows="10"></textarea></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="1"><input type="submit" value="Tallenna" class="button submit-button"></th>
+            </tr>
+        </tfoot>
+    </table>
 </form>

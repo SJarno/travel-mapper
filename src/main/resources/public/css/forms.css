@@ -23,10 +23,6 @@
 
 }
 
-/* .register-form-container tr h1 {
-    text-align: center;
-    margin-bottom: 1rem;
-} */
 
 .register-form-container td {
     text-align: center;
@@ -35,44 +31,66 @@
 
 }
 
-/* .register-form-container form tr > * {
-    flex-basis: 100%;
-} */
-
-
-
-
 .add-location-form {
     /* background: darkkhaki; */
     line-height: 3rem;
-
-
 }
 
-.add-location-form ul {
-    text-align: center;
+.add-location-form tbody {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    flex-direction: row;
+    padding: 1rem;
+    background: linear-gradient(180deg, #e8d3b8, rgb(106 92 70));
+    justify-content: center;
+    
 }
 
-.add-location-form ul>* {
-    /* flex-basis: 50%; */
+.add-location-form tbody>* {
+    flex-basis: 49%;
 }
 
+.add-location-form td {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    margin-bottom: 0.5rem;
+    justify-content: center;
+}
+
+.add-location-form td>* {
+    text-align: center;
+    flex-basis: 100%;
+}
+
+.add-location-form table {
+    width: 100%;
+}
+
+.add-img-container {
+    padding: 1rem;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: #e7d4b0;
+}
+#locationImage {
+    font-size: 1.2rem;
+}
 
 
 /* iPad and bigger */
 @media only screen and (min-width: 768px) {
-    .add-location-form ul {
-        flex-direction: row;
-        /* flex-wrap: nowrap; */
+
+    .add-location-form tbody {
+        justify-content: space-evenly;
+        /* flex-basis: 40%; */
     }
 
-    .add-location-form ul>* {
-        flex-basis: 50%;
+    .add-location-form tbody>* {
+        flex-basis: 51%;
     }
+
 
     .register-form-container td {
         /* flex-direction: row;
@@ -96,8 +114,12 @@
 
 /* iPad pro/laptop and bigger */
 @media only screen and (min-width: 1024px) {
-    .add-location-form ul>* {
+
+    /* .add-location-form ul>* {
         flex-basis: 5%;
+    } */
+    .add-location-form tbody>* {
+        flex-basis: 34%;
     }
 
     .loginform {
@@ -116,6 +138,9 @@
         display: inline-block;
         /* flex-direction: row; */
         /* margin-top: 1rem; */
+    }
+    .add-location-form tbody>* {
+        flex-basis: 22%;
     }
 
 
