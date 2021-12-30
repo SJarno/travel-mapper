@@ -1,4 +1,4 @@
-# Travel mapper app
+# Travel Mapper
 Demo app for storing locations and displaying them on a map.
 
 You can find the app in production here: https://travelafar.herokuapp.com/index
