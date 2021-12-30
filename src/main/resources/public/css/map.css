@@ -27,16 +27,22 @@
     border-radius: 0 0 0.25rem 0.25rem;
     border: 0.1rem solid black;
     border-top: 0;
-    padding: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
 
 .accordion {
     cursor: pointer;
     transition: 0.4s;
+    
 }
 
 .active, .accordion:hover {
-    background-color: #ccc;
+    background: linear-gradient(180deg, var(--main-form-bg-color), rgb(199, 140, 52));
+}
+
+.accordion:active {
+
 }
 
 .panel {
@@ -48,6 +54,7 @@
     border: 0.1rem solid black;
     border-top: 0;
     background: linear-gradient(49deg, #9c7c52, rgb(149 111 52));
+    overflow-x: auto;
 }
 
 @media only screen and (min-width: 321px) {

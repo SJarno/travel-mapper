@@ -34,7 +34,8 @@
             <div id="map"></div>
         </figure>
         <aside class="add-location-footer accordion" onclick="toggleAccordion()">
-            <h2>Lisää sijainti</h2>
+            <!-- <button><h3>Lisää sijainti</h3></button> -->
+            <input type="button" value="Lisää sijainti" class="toggle-accord-button button">
         </aside>
         <div class="panel" id="panelForm">
             <form th:replace="fragments/forms :: add-location-form">

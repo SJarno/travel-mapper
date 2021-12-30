@@ -32,6 +32,14 @@
     padding: 0.5rem;
 }
 
+.toggle-accord-button {
+    width: 100%;
+    background: radial-gradient(rgb(138 90 36) 4%, rgb(138 90 36) 0%, rgb(62 46 23) 85%);
+    font-family: inherit;
+    font-size: 3.5rem;
+    
+}
+
 @media only screen and (min-width: 768px) {
     .login-button {
         margin-top: 1.5rem;

@@ -61,7 +61,7 @@
 
 .add-location-form td>* {
     text-align: center;
-    flex-basis: 100%;
+    flex-basis: 75%;
 }
 
 .add-location-form table {
@@ -119,7 +119,7 @@
         flex-basis: 5%;
     } */
     .add-location-form tbody>* {
-        flex-basis: 34%;
+        /* flex-basis: 34%; */
     }
 
     .loginform {
