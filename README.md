@@ -3,7 +3,7 @@
 
 Demo app for storing locations and displaying them on a map.
 
-You can find the app in production here: https://travelafar.herokuapp.com/index
+Note: not in prod anymore in Heroku as free dynos will not be available in near future.
 
 Please note, that this is a work in progress, and the database will be resetted from time to time.
 
